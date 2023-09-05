@@ -51,7 +51,7 @@ export default function ProductsPage(props : ProductsPageProps){
 
     return(
         <>
-        <h1>Exibir Produtos</h1>
+        <h1>Exibir Produtos - (Financeiro)</h1>
 
         <h2>Produtos Unitários</h2>
         <table>
