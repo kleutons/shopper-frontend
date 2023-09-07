@@ -44,13 +44,17 @@ Chegou a hora de colocar a mão na massa!
     - [x] Os códigos de produtos informados existem?
     - [x] Valida: Preço nao pode está abaixo do custo
     - [x] Valida: Reajuste maior ou menor do que 10%
-    - [ ] Valida: Se é um Pacote - o csv deve conter os reajustes dos preços dos componentes do pacote.
+    - [ ] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
+    - [ ] Nova Reqra: Se parte de um kit - o csv deve conter os reajustes dos preços do pacote.
+    - [ ] Valida: Se é um Kit - o csv deve conter os reajustes dos preços dos componentes do pacote.
         - [ ] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
 - [ ] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
 - [x] Exibir ao lado de cada produto qual regra foi quebrada
 - [ ] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
     - [ ] Ao clica em ATUALIZAR, o sistema deve salvar o novo preço no banco de dados, com tela pronta para o envio de um novo arquivo. 
+    - [ ] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
     - [ ] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. Os preço de custo dos produtos que não são pacotes não deve ser atualizado.
+
 
 
 _O desafio _
