@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# 🚀 Desafio FullStak Shopper.com.br (Repositório FrontEnd)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo(a). Este é o desafio Front end, para a Shopper.com.br!
+O objetivo deste desafio é um teste técnico para avaliar habilidades em desenvolvimento de software.
 
-## Available Scripts
+# 🧠 Contexto
 
-In the project directory, you can run:
+O desafio será implementar uma ferramenta, que permita atualizar os produtos de forma massiva usando com isso o envio de uma arquivo csv, e com recursos adicionais para evitar erros que possam prejudicar o negócio.
 
-### `npm start`
+## Resposabilidades 
+> **Time Compras:** Responsável por definir os preços e gerar um arquivo CSV, contendo código do produto e o novo preço que será carregado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> **Time Financeiro:** Controla o faturamento, solicitou que o sistema impeça que o preço de venda dos produtos fique abaixo do custo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> **Time de Marketing:** Solicida que o sistema impeça qualquer reajuste maior ou menor do que 10%.
 
-### `npm test`
+## Produtos que são pacotes kits
+Estabeleceu-se a regra que, ao reajustar o preço de um pacote, o mesmo arquivo deve conter os reajustes dos preços dos componentes do pacote de modo que o preço final da soma dos componentes seja igual ao preço do pacote.
+***A ferramenta deve impedir atualizações de preço que quebrem essa regra.***
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Exemplo 1:
+    - PACK GUARANA 1L – 6 Unidades = R$ 24,00
+    - Preço cada und. Pack: R$ 4,00 * 6 = R$ 24,00
+    - ::::::::::: NOVO PREÇO :::::::::::::::
+    - PACK GUARANA 1L – 6 Unidades = R$ 30,00
+    - Preço cada und. Pack: R$ 5,00 * 6 = R$ 30,00
+<br><br>
+2. Exemplo 2:
+    - ESCOVA DE DENTES 1und R$ 10,00 + PASTA DE DENTE 1und R$ 15,00
+    - TOTAL = R$ 10,00 + R$ 15,00 = R$ 25,00
+    - ::::::::::: NOVO PREÇO :::::::::::::::
+    - ESCOVA DE DENTES 1und R$ 20,00 + PASTA DE DENTE 1und R$ 15,00
+    - TOTAL = R$ 20,00 + R$ 15,00 = R$ 35,00
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📋 REQUISITOS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Chegou a hora de colocar a mão na massa!
+- [x] O sistema deve permitir que o usuário carregue o arquivo de precificação
+- [x] O sistema deve ter um botão chamado VALIDAR
+    - [x] Todos os campos necessários existem?
+    - [x] Os códigos de produtos informados existem?
+    - [x] Os preços estão preenchidos e são valores numéricos validos? 
+    - [x] Os códigos de produtos informados existem?
+- [ ] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
+- [x] Exibir ao lado de cada produto qual regra foi quebrada
+- [ ] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
+    - [ ] Ao clica em ATUALIZAR, o sistema deve salvar o novo preço no banco de dados, com tela pronta para o envio de um novo arquivo. 
+    - [ ] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. Os preço de custo dos produtos que não são pacotes não deve ser atualizado.
