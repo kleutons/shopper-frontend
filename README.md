@@ -47,3 +47,8 @@ Chegou a hora de colocar a mão na massa!
 - [ ] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
     - [ ] Ao clica em ATUALIZAR, o sistema deve salvar o novo preço no banco de dados, com tela pronta para o envio de um novo arquivo. 
     - [ ] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. Os preço de custo dos produtos que não são pacotes não deve ser atualizado.
+
+
+_O desafio _
+
+Made with 💜 at @kleutons
