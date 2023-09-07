@@ -6,3 +6,11 @@ export type TypeProduct = {
 }
 
 export type TypeProducts = TypeProduct[];
+
+export interface TypeProductValidade extends TypeProduct {
+    new_price: number;
+    isPack: boolean;
+    typeProduct: string;
+    isError: boolean;
+    returnError?: string;
+}

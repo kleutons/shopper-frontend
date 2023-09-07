@@ -1,4 +1,4 @@
-import { useFetchListProduct } from "../../hooks/useFetch";
+import { useFetchGet } from "../../hooks/useFetch";
 import { TypeProducts } from "../../types/typeProduct";
 import { formatCurrency } from "../../utils/format";
 
@@ -9,8 +9,8 @@ interface ProductsPageProps {
 
 export default function ProductsPage(props : ProductsPageProps){
 
-    const { data: uniqueData  } = useFetchListProduct<TypeProducts>('product/list-unique');
-    const { data: packData } = useFetchListProduct<TypeProducts>('product/list-pack');
+    const { data: uniqueData  } = useFetchGet<TypeProducts>('/product/list-unique');
+    const { data: packData } = useFetchGet<TypeProducts>('/product/list-pack');
 
     return(
         <>

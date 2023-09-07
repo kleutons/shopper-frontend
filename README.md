@@ -44,7 +44,7 @@ Chegou a hora de colocar a mão na massa!
     - [x] Os códigos de produtos informados existem?
     - [x] Valida: Preço nao pode está abaixo do custo
     - [x] Valida: Reajuste maior ou menor do que 10%
-    - [ ] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
+    - [x] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
     - [ ] Nova Reqra: Se parte de um kit - o csv deve conter os reajustes dos preços do pacote.
     - [ ] Valida: Se é um Kit - o csv deve conter os reajustes dos preços dos componentes do pacote.
         - [ ] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
