@@ -37,11 +37,16 @@ Estabeleceu-se a regra que, ao reajustar o preço de um pacote, o mesmo arquivo 
 
 Chegou a hora de colocar a mão na massa!
 - [x] O sistema deve permitir que o usuário carregue o arquivo de precificação
-- [x] O sistema deve ter um botão chamado VALIDAR
+- [ ] O sistema deve ter um botão chamado VALIDAR
     - [x] Todos os campos necessários existem?
     - [x] Os códigos de produtos informados existem?
     - [x] Os preços estão preenchidos e são valores numéricos validos? 
     - [x] Os códigos de produtos informados existem?
+    - [x] Valida: Preço nao pode está abaixo do custo
+    - [x] Valida: Reajuste maior ou menor do que 10%
+    - [ ] Valida: Se é um Pacote - o csv deve conter os reajustes dos preços dos componentes do pacote.
+        - [ ] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
+    
 - [ ] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
 - [x] Exibir ao lado de cada produto qual regra foi quebrada
 - [ ] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
