@@ -26,7 +26,7 @@ export function useFetchListProduct<T = unknown>(url: string){
         }
 
         fetch();
-    }, [])
+    }, [url])
 
     return { data, error }
 }

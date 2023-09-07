@@ -9,8 +9,8 @@ interface ProductsPageProps {
 
 export default function ProductsPage(props : ProductsPageProps){
 
-    const { data: uniqueData  } = useFetchListProduct<TypeProducts>('product/all-unique');
-    const { data: packData } = useFetchListProduct<TypeProducts>('product/all-pack');
+    const { data: uniqueData  } = useFetchListProduct<TypeProducts>('product/list-unique');
+    const { data: packData } = useFetchListProduct<TypeProducts>('product/list-pack');
 
     return(
         <>
