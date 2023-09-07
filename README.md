@@ -46,7 +46,6 @@ Chegou a hora de colocar a mão na massa!
     - [x] Valida: Reajuste maior ou menor do que 10%
     - [ ] Valida: Se é um Pacote - o csv deve conter os reajustes dos preços dos componentes do pacote.
         - [ ] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
-    
 - [ ] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
 - [x] Exibir ao lado de cada produto qual regra foi quebrada
 - [ ] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
