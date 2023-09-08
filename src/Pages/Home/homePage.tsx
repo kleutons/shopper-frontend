@@ -1,27 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { useFetchPostForm } from "../../hooks/useFetch";
 import { TypeProductValidade } from "../../types/typeProduct";
+import { toast } from "react-hot-toast";
+import { Btn, FormContainer, Input, Label, StyledTable } from "../style/style";
 
 export default function HomePage(){
     const [formData] = useState(new FormData());
-    const { data, setData, error, sendRequest } = useFetchPostForm('/product/validade-csv', formData);
-    const { data: dataBulk, error: errorBulk, sendRequest: sendBulk } = useFetchPostForm('/product/bulk-update', formData);
+    const { data, setData, error, setError, sendRequest } = useFetchPostForm('/product/validade-csv', formData);
+    const { data: dataBulk, setData: setDataBulk, error: errorBulk, sendRequest: sendBulk } = useFetchPostForm('/product/bulk-update', formData);
     const fileInputRef = React.createRef<HTMLInputElement>();
     const formRef = React.createRef<HTMLFormElement>();
     const [btnDisabled, setBtnDisabled] = useState(true);
 
     useEffect( () => {
+
+        if (error) {           
+            if (error.data) {
+                toast.error(String(error.data.error));
+            }else
+            if(error.message === 'Network Error'){
+                toast.error('Network Error, Tente Novamente');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            }   
+            setError(null);
+
+        }
+
         if(Array.isArray(data)){
             const invalidCSV = data.find((item:TypeProductValidade) => item.isError === true);
             setBtnDisabled(!invalidCSV);
+            if(invalidCSV){
+                toast.error('CSV inválido, Veja Pendencias!');
+            }
         }
 
-        if(dataBulk){
-            setData(null);
+        if(dataBulk){            
             formData.delete('file'); 
-            console.log(errorBulk);
+            if(dataBulk.data){
+                toast.success(String(dataBulk.data));
+                setTimeout(() => {setDataBulk(null);
+                }, 200);
+            }
         }
-    }, [data, setData, dataBulk, errorBulk, formData])
+    }, [data, error, setError, setData, dataBulk, setDataBulk, errorBulk, formData])
 
 
    
@@ -49,10 +72,6 @@ export default function HomePage(){
             event.preventDefault();
             sendBulk();
             setData(null);
-
-
-            // formData.delete('file');
-
         // Limpar após o envio
         if (fileInputRef.current) {
             fileInputRef.current.value = '';
@@ -65,21 +84,17 @@ export default function HomePage(){
         <>
         <h1>Atualizar Preço</h1>
 
-        <form ref={formRef} onSubmit={handleSubmit}>
-            <label htmlFor="fileCsv">Escolha um arquivo CSV, e click em validar:</label>
-            <br/>
-            <input type="file" id="fileCsv" name="file" accept=".csv" onChange={handleFileChange} ref={fileInputRef} />
-            <br/>
-            <button type="submit">VALIDAR</button>
-        </form>
+        <FormContainer ref={formRef} onSubmit={handleSubmit}>
+            <Label htmlFor="fileCsv">Escolha um arquivo CSV, e click em validar:</Label>
+            <Input type="file" id="fileCsv" name="file" accept=".csv" onChange={handleFileChange} ref={fileInputRef} />
+            <Btn type="submit">VALIDAR</Btn>
+        </FormContainer>
 
-
-        {error && <div>Erro: {error.message}</div>}
-
+        <h2>{data ? 'Produtos Para Atualizar' : 'Envie um Arquivo CSV'}</h2>
         {data && Array.isArray(data) && data.length > 0 && (
             <>
-                <h2>Produtos Para Atualizar</h2>
-                <table>
+                
+                <StyledTable>
                     <thead>
                         <tr>
                         <th>Cod.</th>
@@ -87,28 +102,26 @@ export default function HomePage(){
                         <th>Preço Atual</th>
                         <th>Novo Preço</th>
                         <th>Tipo</th>
-                        <th>Valido?</th>
                         <th>Pendência</th>
                         </tr>
                     </thead>
                     <tbody>
                         
-                        {data.map((item: TypeProductValidade, index: number) => (
-                            <tr key={index}>
+                        {data.map((item: TypeProductValidade) => (
+                            <tr key={item.code}>
                                 <td>{item.code}</td>
                                 <td>{item.name}</td>
                                 <td>{item.sales_price}</td>
                                 <td>{item.new_price}</td>
                                 <td>{item.typeProduct}</td>
-                                <td>{!item.isError ? 'Sim' : 'Erro'}</td>
-                                <td>{item.returnError}</td>
+                                <td>{!item.isError ? '✅' : '⛔'} {item.returnError}</td>
                             </tr>
                             
                         ))}
                     </tbody>
-                </table>
+                </StyledTable>
                 
-                <button disabled={!btnDisabled} onClick={handleSubmitAtualizar}>Atualizar</button>
+                <Btn disabled={!btnDisabled} onClick={handleSubmitAtualizar}>Atualizar</Btn>
             </>
         )}        
         

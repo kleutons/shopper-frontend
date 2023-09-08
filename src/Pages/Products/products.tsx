@@ -1,6 +1,7 @@
 import { useFetchGet } from "../../hooks/useFetch";
 import { TypeProducts } from "../../types/typeProduct";
 import { formatCurrency } from "../../utils/format";
+import { StyledTable } from "../style/style";
 
 
 interface ProductsPageProps {
@@ -17,7 +18,7 @@ export default function ProductsPage(props : ProductsPageProps){
         <h1>Exibir Produtos - (Financeiro)</h1>
 
         <h2>Produtos Unitários</h2>
-        <table>
+        <StyledTable>
             <thead>
                 <tr>
                 <th>Cod.</th>
@@ -39,10 +40,10 @@ export default function ProductsPage(props : ProductsPageProps){
                 )}
                 
             </tbody>
-        </table>
+        </StyledTable>
 
         <h2>Kits de Produtos</h2>
-        <table>
+        <StyledTable>
             <thead>
                 <tr>
                 <th>Cod.</th>
@@ -64,7 +65,7 @@ export default function ProductsPage(props : ProductsPageProps){
                 )}
                 
             </tbody>
-        </table>
+        </StyledTable>
 
         </>
     )
