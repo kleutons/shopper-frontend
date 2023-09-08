@@ -5,7 +5,7 @@ O objetivo deste desafio é um teste técnico para avaliar habilidades em desenv
 
 ### Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/kleutons/capputeeno/master/.github/prototype.png)
+![App Screenshot](.github/prototype.png)
 
 # 🧠 Contexto
 
