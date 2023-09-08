@@ -3,6 +3,10 @@
 Bem-vindo(a). Este é o desafio Front end, para a Shopper.com.br!
 O objetivo deste desafio é um teste técnico para avaliar habilidades em desenvolvimento de software.
 
+### Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/kleutons/capputeeno/master/.github/prototype.png)
+
 # 🧠 Contexto
 
 O desafio será implementar uma ferramenta, que permita atualizar os produtos de forma massiva usando com isso o envio de uma arquivo csv, e com recursos adicionais para evitar erros que possam prejudicar o negócio.
