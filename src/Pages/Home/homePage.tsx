@@ -4,6 +4,7 @@ import { TypeProductValidade } from "../../types/typeProduct";
 import { toast } from "react-hot-toast";
 import { Btn, FormContainer, Input, Label, StyledTable } from "../style/style";
 import { formatCurrency } from "../../utils/format";
+import { clear } from "console";
 
 export default function HomePage(){
     const [formData] = useState(new FormData());
@@ -17,13 +18,24 @@ export default function HomePage(){
 
         if (error) {           
             if (error.data) {
-                toast.error(String(error.data.error));
+                const errorRetun = String(error.data.error);
+                if(errorRetun !== undefined){
+                    toast.error('Tente Novamente');
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                }else{
+                    toast.error(String(error.data.error));
+                }
             }else
             if(error.message === 'Network Error'){
                 toast.error('Network Error, Tente Novamente');
                 setTimeout(() => {
                     window.location.reload();
                 }, 1000);
+            }else{
+                console.log(error);
+                console.log(error.message);
             }   
             setError(null);
 
