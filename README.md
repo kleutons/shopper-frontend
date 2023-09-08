@@ -64,14 +64,19 @@ Chegou a hora de colocar a mão na massa!
 git clone https://github.com/kleutons/shopper-frontend
 ```
 
-3. Instalar dependência 
+2. Instalar dependência 
 ```bash
 npm install
 ```
 
-4. Executar Front-end
+3. Executar Front-end
 ```bash
 npm start
+```
+
+4. Acessar WebSite FrontEnd na porta 3000
+```
+http://localhost:3000/
 ```
 
 ### Servidor BackEnd

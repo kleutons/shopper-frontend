@@ -13,10 +13,18 @@ export const StyledTable  = styled.table`
 
     th {
         background-color: #f2f2f2;
+
+        &.pendencia {
+          width: 25%; 
+        }
     }
 
     tr:hover {
         background-color: #f5f5f5;
+    }
+
+    .center{
+      text-align:center;
     }
 `
 
@@ -54,7 +62,7 @@ export const Btn = styled.button`
   &:hover {
     background-color: #0056b3;
   }
-  
+
   &:disabled {
     background-color: #ccc;
     cursor: not-allowed;

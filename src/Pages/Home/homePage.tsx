@@ -3,6 +3,7 @@ import { useFetchPostForm } from "../../hooks/useFetch";
 import { TypeProductValidade } from "../../types/typeProduct";
 import { toast } from "react-hot-toast";
 import { Btn, FormContainer, Input, Label, StyledTable } from "../style/style";
+import { formatCurrency } from "../../utils/format";
 
 export default function HomePage(){
     const [formData] = useState(new FormData());
@@ -99,10 +100,10 @@ export default function HomePage(){
                         <tr>
                         <th>Cod.</th>
                         <th>Nome</th>
-                        <th>Preço Atual</th>
-                        <th>Novo Preço</th>
-                        <th>Tipo</th>
-                        <th>Pendência</th>
+                        <th className="center">Preço Atual</th>
+                        <th className="center">Novo Preço</th>
+                        <th className="center">Tipo</th>
+                        <th className="pendencia center">Pendência</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,9 +112,9 @@ export default function HomePage(){
                             <tr key={item.code}>
                                 <td>{item.code}</td>
                                 <td>{item.name}</td>
-                                <td>{item.sales_price}</td>
-                                <td>{item.new_price}</td>
-                                <td>{item.typeProduct}</td>
+                                <td className="center">{formatCurrency(item.sales_price)}</td>
+                                <td className="center">{formatCurrency(item.new_price)}</td>
+                                <td className="center">{item.typeProduct}</td>
                                 <td>{!item.isError ? '✅' : '⛔'} {item.returnError}</td>
                             </tr>
                             
