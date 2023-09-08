@@ -55,7 +55,35 @@ Chegou a hora de colocar a mão na massa!
     - [x] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. 
 
 
+## 👨‍💻 Instalação
 
-_. _
+### Frontend
 
-Made with 💜 at [@kleutons](https://github.com/kleutons)
+1. Clonar este repositório
+```bash
+git clone https://github.com/kleutons/shopper-frontend
+```
+
+3. Instalar dependência 
+```bash
+npm install
+```
+
+4. Executar Front-end
+```bash
+npm start
+```
+
+### Servidor BackEnd
+Siga os passos descrito no Readme do repositório referente ao servidor backend: 
+- https://github.com/kleutons/shopper-backend
+
+## 👨‍💻 Sobre Mim
+### Made with 💙 by [@kleutons](https://github.com/kleutons)
+
+### Contato
+- [LinkedIn](https://www.linkedin.com/in/kleuton-novais/)
+- [Portfólio](https://kleuton.dev)
+
+###
+Estou ansioso para receber feedback e sugestões sobre esta solução.
