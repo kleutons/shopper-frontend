@@ -16,3 +16,7 @@ code {
   max-width: 1270px;
   margin: 0 auto;
 }
+
+main{
+  min-height: calc(100vh - 380px);
+}
