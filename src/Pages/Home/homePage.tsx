@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFetchPostForm } from "../../hooks/useFetch";
 import { TypeProductValidade } from "../../types/typeProduct";
 
 export default function HomePage(){
     const [formData] = useState(new FormData());
-    const { data, error, sendRequest } = useFetchPostForm('/product/bulk-update', formData);
+    const { data, setData, error, sendRequest } = useFetchPostForm('/product/validade-csv', formData);
+    const { data: dataBulk, error: errorBulk, sendRequest: sendBulk } = useFetchPostForm('/product/bulk-update', formData);
     const fileInputRef = React.createRef<HTMLInputElement>();
+    const formRef = React.createRef<HTMLFormElement>();
+    const [btnDisabled, setBtnDisabled] = useState(true);
 
-    // Função para lidar com o envio do arquivo
+    useEffect( () => {
+        if(Array.isArray(data)){
+            const invalidCSV = data.find((item:TypeProductValidade) => item.isError === true);
+            setBtnDisabled(!invalidCSV);
+        }
+
+        if(dataBulk){
+            setData(null);
+            formData.delete('file'); 
+            console.log(errorBulk);
+        }
+    }, [data, setData, dataBulk, errorBulk, formData])
+
+
+   
     const handleFileChange = (event:any) => {
         const file = event.target.files[0];
         formData.append('file', file);
     };
 
-    // Função para lidar com o envio do formulário
+
     const handleSubmit = (event:any) => {
         event.preventDefault();
         sendRequest();
@@ -26,11 +43,29 @@ export default function HomePage(){
     }
               
 
+     const handleSubmitAtualizar = (event:any) => {
+        
+        if (formRef.current) {
+            event.preventDefault();
+            sendBulk();
+            setData(null);
+
+
+            // formData.delete('file');
+
+        // Limpar após o envio
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+            
+        }
+        }
+    }
+
     return(
         <>
         <h1>Atualizar Preço</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
             <label htmlFor="fileCsv">Escolha um arquivo CSV, e click em validar:</label>
             <br/>
             <input type="file" id="fileCsv" name="file" accept=".csv" onChange={handleFileChange} ref={fileInputRef} />
@@ -73,7 +108,7 @@ export default function HomePage(){
                     </tbody>
                 </table>
                 
-                <button>Atualizar</button>
+                <button disabled={!btnDisabled} onClick={handleSubmitAtualizar}>Atualizar</button>
             </>
         )}        
         

@@ -37,7 +37,7 @@ Estabeleceu-se a regra que, ao reajustar o preço de um pacote, o mesmo arquivo 
 
 Chegou a hora de colocar a mão na massa!
 - [x] O sistema deve permitir que o usuário carregue o arquivo de precificação
-- [ ] O sistema deve ter um botão chamado VALIDAR
+- [x] O sistema deve ter um botão chamado VALIDAR
     - [x] Todos os campos necessários existem?
     - [x] Os códigos de produtos informados existem?
     - [x] Os preços estão preenchidos e são valores numéricos validos? 
@@ -45,18 +45,17 @@ Chegou a hora de colocar a mão na massa!
     - [x] Valida: Preço nao pode está abaixo do custo
     - [x] Valida: Reajuste maior ou menor do que 10%
     - [x] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
-    - [ ] Nova Reqra: Se parte de um kit - o csv deve conter os reajustes dos preços do pacote.
-    - [ ] Valida: Se é um Kit - o csv deve conter os reajustes dos preços dos componentes do pacote.
-        - [ ] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
-- [ ] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
+    - [x] Valida: Se é um Kit - o csv deve conter os reajustes dos preços dos componentes do pacote.
+        - [x] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
+- [x] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
 - [x] Exibir ao lado de cada produto qual regra foi quebrada
-- [ ] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
-    - [ ] Ao clica em ATUALIZAR, o sistema deve salvar o novo preço no banco de dados, com tela pronta para o envio de um novo arquivo. 
-    - [ ] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
-    - [ ] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. Os preço de custo dos produtos que não são pacotes não deve ser atualizado.
+- [x] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
+    - [x] Ao clica em ATUALIZAR, o sistema deve salvar o novo preço no banco de dados, com tela pronta para o envio de um novo arquivo. 
+    - [x] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
+    - [x] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. 
 
 
 
-_O desafio _
+_. _
 
-Made with 💜 at @kleutons
+Made with 💜 at [@kleutons](https://github.com/kleutons)

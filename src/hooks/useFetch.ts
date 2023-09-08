@@ -64,5 +64,5 @@ export function useFetchPostForm<T = unknown>(url: string, formData: FormData){
         setIsRequestSent(true);
     };
 
-    return { data, error, sendRequest }
+    return { data, setData, error, sendRequest }
 }
