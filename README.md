@@ -1,5 +1,9 @@
 # 🚀 Desafio FullStak Shopper.com.br (Repositório FrontEnd)
 
+## Versão 2 desse mesmo teste, melhorado: [Acesse](https://github.com/kleutons/shopper-frontend-v2)
+https://github.com/kleutons/shopper-frontend-v2
+
+
 Bem-vindo(a). Este é o desafio Front end, para a Shopper.com.br!
 O objetivo deste desafio é um teste técnico para avaliar habilidades em desenvolvimento de software.
 
@@ -46,17 +50,17 @@ Chegou a hora de colocar a mão na massa!
     - [x] Os códigos de produtos informados existem?
     - [x] Os preços estão preenchidos e são valores numéricos validos? 
     - [x] Os códigos de produtos informados existem?
-    - [x] Valida: Preço nao pode está abaixo do custo
+    - [x] Valida: Preço não pode estar abaixo do custo
     - [x] Valida: Reajuste maior ou menor do que 10%
-    - [x] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
+    - [x] Nova Regra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
     - [x] Valida: Se é um Kit - o csv deve conter os reajustes dos preços dos componentes do pacote.
         - [x] Valida: verificar se preço final da soma dos componentes seja igual ao preço do pacote.
-- [x] Finalzar Validação: e exibir Codigo, Nome, Preço Atual, Novo Preço
+- [x] Finalizar Validação: e exibir Código, Nome, Preço Atual, Novo Preço
 - [x] Exibir ao lado de cada produto qual regra foi quebrada
-- [x] Habilitar botão ATUALIZAR, somente se todas as linhas estiver Validada
+- [x] Habilitar botão ATUALIZAR, somente se todas as linhas estiverem validadas
     - [x] Ao clica em ATUALIZAR, o sistema deve salvar o novo preço no banco de dados, com tela pronta para o envio de um novo arquivo. 
-    - [x] Nova Reqra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
-    - [x] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes. 
+    - [x] Nova Regra: Valida Tipo de produto, é unitário, é um kit, ou faz parte de um kit
+    - [x] O preço de custo dos pacotes também deve ser atualizado como a soma dos custos dos seus componentes.  
 
 
 ## 👨‍💻 Instalação
@@ -95,4 +99,4 @@ Siga os passos descrito no Readme do repositório referente ao servidor backend:
 - [Portfólio](https://kleuton.dev)
 
 ###
-Estou ansioso para receber feedback e sugestões sobre esta solução.
+Aguardo seu feedback e sugestões sobre esta solução.
